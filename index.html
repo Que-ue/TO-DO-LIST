@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hi Princess ✨</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue&family=Poppins&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="greeting" id="welcomeText">Hi Princess ✨</div>
+  <div class="aesthetic" id="aestheticText">Feeling fabulous today 💖</div>
+
+  <div class="section-buttons">
+    <button onclick="goTo('sections/todo.html')">📝 To-Do List</button>
+    <button onclick="goTo('sections/notes.html')">📓 Notes</button>
+    <button onclick="goTo('sections/focus.html')">⏳ Focus Mode</button>
+    <button onclick="goTo('sections/today.html')">💗 What I Did Today</button>
+  </div>
+
+  <script>
+    function goTo(page) {
+      window.location.href = page;
+    }
+  </script>
+</body>
+</html>

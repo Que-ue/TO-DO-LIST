@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>What I Did Today 💖</title>
+  <link rel="stylesheet" href="../style.css" />
+  <script src="../script.js" defer></script>
+</head>
+<body>
+  <h1 class="page-title">🌸 What I Did Today</h1>
+
+  <div class="layout">
+    <div class="column left">
+      <div class="card gratitude-box">
+        <h3>💌 One thing you're grateful for</h3>
+        <textarea id="gratitudeInput" placeholder="Something cute or deep..."></textarea>
+      </div>
+    </div>
+  
+    <div class="column right">
+      <div class="card tracker-box">
+        <h3>Sleep Tracker: <span id="sleepEmoji">😖</span></h3>
+        <div class="tracker-control">
+          <button onclick="changeSleep(-1)">⬅</button>
+          <span id="sleepValue">0</span> hrs
+          <button onclick="changeSleep(1)">➡</button>
+        </div>
+      </div>
+
+      <div class="card tracker-box">
+        <h3>Water Intake: <span id="waterEmoji">💀</span></h3>
+        <div class="tracker-control">
+          <button onclick="changeWater(-1)">⬅</button>
+          <span id="waterValue">0</span> glasses
+          <button onclick="changeWater(1)">➡</button>
+        </div>
+      </div>
+
+      <div class="card mood-box">
+        <h3>Mood Tracker: <span id="selectedMood">👅</span></h3>
+        <div class="mood-options">
+          <button onclick="selectMood('😊')">😊</button>
+          <button onclick="selectMood('😁')">😁</button>
+          <button onclick="selectMood('☹️')">☹️</button>
+          <button onclick="selectMood('👅')">👅</button>
+          <button onclick="selectMood('😠')">😠</button>
+          <button onclick="selectMood('😭')">😭</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card summary-box">
+    <h3>📝 Summary of the Day</h3>
+    <textarea id="summaryInput" placeholder="Write your heart out..."></textarea>
+  </div>
+
+  <div class="button-row">
+    <button onclick="saveToday()">💾 Save</button>
+    <button onclick="clearToday()">🗑 Clear</button>
+  </div>
+</body>
+</html>

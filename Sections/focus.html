@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Focus Zone 🎯</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body class="focus-page">
+  <h1 class="focus-heading">🎯 Focus Mode</h1>
+
+  <div class="focus-row">
+    <!-- 🍅 Pomodoro Timer -->
+    <div class="focus-box" id="pomodoro">
+      <h2>🍅 Pomodoro Timer</h2>
+      <label for="customTime">Set time (minutes):</label>
+      <input type="number" id="customTime" min="1" max="120" value="25" />
+      <div class="timer-display">
+        <span id="minutes">25</span>:<span id="seconds">00</span>
+      </div>
+      <div class="timer-controls">
+        <button onclick="startPomodoro()">▶</button>
+        <button onclick="pausePomodoro()">⏸</button>
+        <button onclick="resetPomodoro()">🔁</button>
+      </div>
+    </div>
+
+    <!-- 🎻 Vibe Music -->
+    <div class="focus-box" id="vibe-music">
+      <h2>🎻 Dramatic Classical</h2>
+      <audio controls loop>
+        <source src="../assets/dramatic-classical.mp3" type="audio/mp3" />
+        Your browser does not support the audio element.
+      </audio>
+    </div>
+  </div>
+
+  <!-- 💖 Affirmation -->
+  <div class="focus-box center-box" id="affirmation">
+    <h2>💖 Affirmation</h2>
+    <p id="affirmationText">You're doing amazing, sweetie 💅</p>
+    <button onclick="newAffirmation()">✨ New One</button>
+  </div>
+
+  <script src="../script.js"></script>
+</body>
+</html>
