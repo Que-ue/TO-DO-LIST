@@ -3,62 +3,119 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>What I Did Today 💖</title>
+  <title>Today</title>
   <link rel="stylesheet" href="../style.css" />
   <script src="../script.js" defer></script>
 </head>
-<body>
-  <h1 class="page-title">🌸 What I Did Today</h1>
-
+<body class="today-page">
+  <!-- ✨ FLOATING DECORATIONS -->
+  <div class="floating-decoration decoration-1">♡</div>
+  <div class="floating-decoration decoration-2">✦</div>
+  <div class="floating-decoration decoration-3">♡</div>
+  <div class="floating-decoration decoration-4">✧</div>
+  <!-- 🌸 PAGE TITLE -->
+  <h1 class="page-title">
+    🌸 What I Did Today
+  </h1>
+  <p class="today-date" id="todayDate"></p>
+  <!-- 💖 MAIN LAYOUT -->
   <div class="layout">
+    <!-- 💌 GRATITUDE -->
     <div class="column left">
       <div class="card gratitude-box">
         <h3>💌 One thing you're grateful for</h3>
-        <textarea id="gratitudeInput" placeholder="Something cute or deep..."></textarea>
+        <textarea
+          id="gratitudeInput"
+          placeholder="Something cute or deep..."
+        ></textarea>
       </div>
     </div>
-  
+    <!-- 📊 TRACKERS -->
     <div class="column right">
+      <!-- 😴 SLEEP -->
       <div class="card tracker-box">
-        <h3>Sleep Tracker: <span id="sleepEmoji">😖</span></h3>
+        <h3>
+          Sleep Tracker:
+          <span id="sleepEmoji">😖</span>
+        </h3>
         <div class="tracker-control">
           <button onclick="changeSleep(-1)">⬅</button>
-          <span id="sleepValue">0</span> hrs
+          <span>
+            <strong id="sleepValue">0</strong> hrs
+          </span>
           <button onclick="changeSleep(1)">➡</button>
         </div>
+        <div class="progress-container">
+          <div
+            class="progress-bar sleep-progress"
+            id="sleepProgress"
+          ></div>
+        </div>
+        <p class="tracker-hint">
+          goal: 8 hours
+        </p>
       </div>
-
+      <!-- 💧 WATER -->
       <div class="card tracker-box">
-        <h3>Water Intake: <span id="waterEmoji">💀</span></h3>
+        <h3>
+          Water Intake:
+          <span id="waterEmoji">💀</span>
+        </h3>
         <div class="tracker-control">
           <button onclick="changeWater(-1)">⬅</button>
-          <span id="waterValue">0</span> glasses
+          <span>
+            <strong id="waterValue">0</strong> glasses
+          </span>
           <button onclick="changeWater(1)">➡</button>
         </div>
+        <div class="progress-container">
+          <div
+            class="progress-bar water-progress"
+            id="waterProgress"
+          ></div>
+        </div>
+        <p class="tracker-hint">
+          goal: 8 glasses
+        </p>
       </div>
-
+      <!-- 🌸 MOOD -->
       <div class="card mood-box">
-        <h3>Mood Tracker: <span id="selectedMood">👅</span></h3>
+        <h3>
+          Mood Tracker:
+          <span id="selectedMood">👅</span>
+        </h3>
         <div class="mood-options">
-          <button onclick="selectMood('😊')">😊</button>
-          <button onclick="selectMood('😁')">😁</button>
-          <button onclick="selectMood('☹️')">☹️</button>
-          <button onclick="selectMood('👅')">👅</button>
-          <button onclick="selectMood('😠')">😠</button>
-          <button onclick="selectMood('😭')">😭</button>
+          <button onclick="selectMood('😊', this)">😊</button>
+          <button onclick="selectMood('😁', this)">😁</button>
+          <button onclick="selectMood('☹️', this)">☹️</button>
+          <button onclick="selectMood('👅', this)">👅</button>
+          <button onclick="selectMood('😠', this)">😠</button>
+          <button onclick="selectMood('😭', this)">😭</button>
         </div>
       </div>
     </div>
   </div>
-
+  <!-- 📝 SUMMARY -->
   <div class="card summary-box">
     <h3>📝 Summary of the Day</h3>
-    <textarea id="summaryInput" placeholder="Write your heart out..."></textarea>
+    <textarea
+      id="summaryInput"
+      placeholder="Write your heart out..."
+    ></textarea>
   </div>
-
+  <!-- 💾 BUTTONS -->
   <div class="button-row">
-    <button onclick="saveToday()">💾 Save</button>
-    <button onclick="clearToday()">🗑 Clear</button>
+    <button onclick="saveToday()">
+      💾 Save
+    </button>
+    <button onclick="clearToday()">
+      🗑 Clear
+    </button>
   </div>
+  <!-- 🔔 NOTIFICATION -->
+  <div
+    class="today-notification"
+    id="todayNotification"
+  ></div>
 </body>
 </html>
