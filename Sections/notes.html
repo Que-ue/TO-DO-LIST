@@ -2,18 +2,113 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>My Notes 📝</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Notes</title>
   <link rel="stylesheet" href="../style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue&family=Poppins&family=Playfair+Display&family=Quicksand&display=swap" rel="stylesheet">
 </head>
 <body class="notes-page">
   <h1 class="notes-heading">📒 My Notes</h1>
+  <div class="notes-editor">
+    <!-- TOOLBAR -->
+    <div class="notes-toolbar">
+      <!-- Headings -->
+      <div class="toolbar-group">
+        <button onclick="formatText('formatBlock', 'H1')">H1</button>
+        <button onclick="formatText('formatBlock', 'H2')">H2</button>
+        <button onclick="formatText('formatBlock', 'H3')">H3</button>
+        <button onclick="formatText('formatBlock', 'H4')">H4</button>
+      </div>
+      <!-- Formatting -->
+      <div class="toolbar-group">
+        <button onclick="formatText('bold')"><b>B</b></button>
+        <button onclick="formatText('italic')"><i>I</i></button>
+        <button onclick="formatText('underline')"><u>U</u></button>
+        <button onclick="formatText('strikeThrough')"><s>S</s></button>
+      </div>
+      <!-- Font -->
+      <div class="toolbar-group">
+        <select onchange="formatText('fontName', this.value)">
+          <option value="Poppins">Poppins</option>
+          <option value="Quicksand">Quicksand</option>
+          <option value="Comic Neue">Comic Neue</option>
+          <option value="Georgia">Georgia</option>
+        </select>
+        <select onchange="formatText('fontSize', this.value)">
+          <option value="2">Small</option>
+          <option value="3" selected>Normal</option>
+          <option value="4">Large</option>
+          <option value="5">Huge</option>
+        </select>
+      </div>
+      <!-- Text Color -->
+      <div class="toolbar-group color-picker">
+        <button class="tool-button">🎨</button>
+        <div class="color-palette">
+          <button style="background:#4a2945" onclick="changeColor('#4a2945')"></button>
+          <button style="background:#e7a9c8" onclick="changeColor('#e7a9c8')"></button>
+          <button style="background:#d96b9a" onclick="changeColor('#d96b9a')"></button>
+          <button style="background:#8d547f" onclick="changeColor('#8d547f')"></button>
 
-  <textarea id="notesArea" placeholder="Write your beautiful thoughts here... ✨"></textarea>
-
-  <div class="button-area">
-    <button onclick="saveNotes()">💾 Save</button>
-    <button onclick="clearNotes()">🗑️ Clear</button>
+          <button style="background:#a995d6" onclick="changeColor('#a995d6')"></button>
+          <button style="background:#8fb9d4" onclick="changeColor('#8fb9d4')"></button>
+          <button style="background:#8fb8a5" onclick="changeColor('#8fb8a5')"></button>
+          <button style="background:#b98b72" onclick="changeColor('#b98b72')"></button>
+        </div>
+      </div>
+      <!-- Highlight -->
+      <div class="toolbar-group">
+        <button onclick="highlightText('#ffd9e8')">🖍️</button>
+      </div>
+      <!-- Lists -->
+      <div class="toolbar-group">
+        <button onclick="formatText('insertUnorderedList')">•</button>
+        <button onclick="formatText('insertOrderedList')">1.</button>
+      </div>
+      <!-- Alignment -->
+      <div class="toolbar-group">
+        <button onclick="formatText('justifyLeft')">←</button>
+        <button onclick="formatText('justifyCenter')">↔</button>
+        <button onclick="formatText('justifyRight')">→</button>
+      </div>
+      <!-- Undo / Redo -->
+      <div class="toolbar-group">
+        <button onclick="formatText('undo')">↶</button>
+        <button onclick="formatText('redo')">↷</button>
+      </div>
+      <!-- Emoji -->
+      <div class="toolbar-group emoji-picker">
+        <button class="tool-button">😊</button>
+        <div class="emoji-palette">
+          <button onclick="insertEmoji('💗')">💗</button>
+          <button onclick="insertEmoji('✨')">✨</button>
+          <button onclick="insertEmoji('♡')">♡</button>
+          <button onclick="insertEmoji('🌸')">🌸</button>
+          <button onclick="insertEmoji('🦋')">🦋</button>
+          <button onclick="insertEmoji('🎀')">🎀</button>
+          <button onclick="insertEmoji('☁️')">☁️</button>
+          <button onclick="insertEmoji('🌙')">🌙</button>
+          <button onclick="insertEmoji('⭐')">⭐</button>
+          <button onclick="insertEmoji('📝')">📝</button>
+          <button onclick="insertEmoji('☕')">☕</button>
+          <button onclick="insertEmoji('🧸')">🧸</button>
+          <button onclick="insertEmoji('😭')">😭</button>
+          <button onclick="insertEmoji('😂')">😂</button>
+          <button onclick="insertEmoji('🤍')">🤍</button>
+        </div>
+      </div>
+    </div>
+    <!-- WRITING AREA -->
+    <div
+      id="notesArea"
+      contenteditable="true"
+      data-placeholder="Write your beautiful thoughts here... ✨"
+    ></div>
+    <!-- BUTTONS -->
+    <div class="button-area">
+      <button onclick="saveNotes()">💾 Save</button>
+      <button onclick="clearNotes()">🗑️ Clear</button>
+    </div>
   </div>
   <script src="../script.js"></script>
 </body>
